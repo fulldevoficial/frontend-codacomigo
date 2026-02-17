@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
 import userEvent from '@testing-library/user-event';
+import { describe, expect, it, vi } from 'vitest';
+
 import Card from '@/components/Card';
 
 describe('Card Component', () => {
@@ -8,7 +9,7 @@ describe('Card Component', () => {
     title: 'Test Card',
     description: 'This is a test description',
     imageUrl: '/test-image.svg',
-    tags: ['React', 'Testing', 'Vitest']
+    tags: ['React', 'Testing', 'Vitest'],
   };
 
   it('should render card with correct title', () => {
@@ -38,10 +39,10 @@ describe('Card Component', () => {
     const user = userEvent.setup();
     const mockOnClick = vi.fn();
     render(<Card {...mockProps} onClick={mockOnClick} />);
-    
+
     const card = screen.getByText('Test Card').closest('div[class*="cursor-pointer"]');
     await user.click(card!);
-    
+
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
 

@@ -1,30 +1,31 @@
-import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { SubmitButton } from "./submit-button";
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+
+import { SubmitButton } from './submit-button';
 
 const meta: Meta<typeof SubmitButton> = {
-  title: "Design System/SubmitButton",
+  title: 'Design System/SubmitButton',
   component: SubmitButton,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
-    children: "Enviar",
+    children: 'Enviar',
     isLoading: false,
     disabled: false,
   },
   argTypes: {
     isLoading: {
-      control: "boolean",
-      description: "Exibe o spinner e desabilita o botão",
+      control: 'boolean',
+      description: 'Exibe o spinner e desabilita o botão',
     },
     children: {
-      control: "text",
-      description: "Conteúdo do botão",
+      control: 'text',
+      description: 'Conteúdo do botão',
     },
     disabled: {
-      control: "boolean",
-      description: "Desabilita o botão manualmente",
+      control: 'boolean',
+      description: 'Desabilita o botão manualmente',
     },
     onClick: {
-      action: "clicked",
+      action: 'clicked',
     },
   },
 };

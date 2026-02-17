@@ -1,22 +1,22 @@
-import { create } from "storybook/theming";
+import { create } from 'storybook/theming';
 
 export const darkTheme = create({
-  base: "dark",
+  base: 'dark',
 
-  colorPrimary: "#b22d00",
+  colorPrimary: '#b22d00',
 
-  appBg: "#0a0a0a",
-  appContentBg: "#0a0a0a",
-  appBorderColor: "#262626",
+  appBg: '#0a0a0a',
+  appContentBg: '#0a0a0a',
+  appBorderColor: '#262626',
 
-  textColor: "#fafafa",
-  textInverseColor: "#0a0a0a",
+  textColor: '#fafafa',
+  textInverseColor: '#0a0a0a',
 
-  barBg: "#0a0a0a",
-  barTextColor: "#fafafa",
-  barSelectedColor: "#b22d00",
+  barBg: '#0a0a0a',
+  barTextColor: '#fafafa',
+  barSelectedColor: '#b22d00',
 
-  inputBg: "#0a0a0a",
-  inputBorder: "#262626",
-  inputTextColor: "#fafafa",
+  inputBg: '#0a0a0a',
+  inputBorder: '#262626',
+  inputTextColor: '#fafafa',
 });

@@ -4,6 +4,7 @@
  */
 
 import '@testing-library/jest-dom';
+
 import { beforeEach, vi } from 'vitest';
 
 // Capture and suppress expected unhandled rejections during tests

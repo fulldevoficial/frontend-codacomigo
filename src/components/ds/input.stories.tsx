@@ -1,19 +1,20 @@
-import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { Input } from "./input";
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+
+import { Input } from './input';
 
 const meta: Meta<typeof Input> = {
-  title: "Design System/Input",
+  title: 'Design System/Input',
   component: Input,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
     type: {
-      control: "text",
+      control: 'text',
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
     },
     placeholder: {
-      control: "text",
+      control: 'text',
     },
   },
 };
@@ -24,34 +25,34 @@ type Story = StoryObj<typeof Input>;
 
 export const Default: Story = {
   args: {
-    placeholder: "Digite algo...",
+    placeholder: 'Digite algo...',
   },
 };
 
 export const WithValue: Story = {
   args: {
-    value: "Valor preenchido",
+    value: 'Valor preenchido',
     readOnly: true,
   },
 };
 
 export const Disabled: Story = {
   args: {
-    placeholder: "Campo desabilitado",
+    placeholder: 'Campo desabilitado',
     disabled: true,
   },
 };
 
 export const Password: Story = {
   args: {
-    type: "password",
-    placeholder: "Senha",
+    type: 'password',
+    placeholder: 'Senha',
   },
 };
 
 export const Email: Story = {
   args: {
-    type: "email",
-    placeholder: "email@exemplo.com",
+    type: 'email',
+    placeholder: 'email@exemplo.com',
   },
 };

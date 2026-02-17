@@ -1,28 +1,29 @@
-import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { Text } from "./text";
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+
+import { Text } from './text';
 
 const meta: Meta<typeof Text> = {
-  title: "Design System/Typography/Text",
+  title: 'Design System/Typography/Text',
   component: Text,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
   argTypes: {
     size: {
-      control: "select",
-      options: ["sub1", "sub2", "p1", "p2", "small"],
+      control: 'select',
+      options: ['sub1', 'sub2', 'p1', 'p2', 'small'],
     },
     weight: {
-      control: "select",
-      options: ["regular", "medium", "semibold"],
+      control: 'select',
+      options: ['regular', 'medium', 'semibold'],
     },
     tone: {
-      control: "select",
-      options: ["default", "muted"],
+      control: 'select',
+      options: ['default', 'muted'],
     },
     as: {
-      control: "select",
-      options: ["p", "span", "label", "strong"],
+      control: 'select',
+      options: ['p', 'span', 'label', 'strong'],
     },
   },
 };
@@ -32,10 +33,10 @@ type Story = StoryObj<typeof Text>;
 
 export const Playground: Story = {
   args: {
-    size: "p1",
-    weight: "regular",
-    tone: "default",
-    children: "Esse é um texto do design system.",
+    size: 'p1',
+    weight: 'regular',
+    tone: 'default',
+    children: 'Esse é um texto do design system.',
   },
 };
 

@@ -1,9 +1,9 @@
-import type { ButtonHTMLAttributes } from "react";
-import { forwardRef } from "react";
+import type { ButtonHTMLAttributes } from 'react';
+import { forwardRef } from 'react';
 
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Spinner } from "@/components/ui/spinner";
+import { Button } from '@/components/ui/button';
+import { Spinner } from '@/components/ui/spinner';
+import { cn } from '@/lib/utils';
 
 type SubmitButtonProps = {
   isLoading?: boolean;
@@ -16,7 +16,7 @@ export const SubmitButton = forwardRef<HTMLButtonElement, SubmitButtonProps>(
         ref={ref}
         disabled={isLoading || disabled}
         className={cn(
-          "flex items-center justify-center cursor-pointer rounded-2xl disabled:pointer-events-auto disabled:cursor-not-allowed",
+          'flex cursor-pointer items-center justify-center rounded-2xl disabled:pointer-events-auto disabled:cursor-not-allowed',
           className,
         )}
         {...rest}
@@ -28,4 +28,4 @@ export const SubmitButton = forwardRef<HTMLButtonElement, SubmitButtonProps>(
   },
 );
 
-SubmitButton.displayName = "SubmitButton";
+SubmitButton.displayName = 'SubmitButton';
