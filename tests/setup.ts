@@ -4,15 +4,18 @@
  */
 
 import '@testing-library/jest-dom';
+
 import { beforeEach, vi } from 'vitest';
 
-// Capture and suppress expected unhandled rejections during tests
+// Capture and suppress expected unhandled rejections during tests (Node only)
 let unhandledRejections: Error[] = [];
 
-process.on('unhandledRejection', (reason) => {
-  unhandledRejections.push(reason as Error);
-  // Don't log these during tests as they are expected in error testing scenarios
-});
+if (typeof process !== 'undefined' && process.on) {
+  process.on('unhandledRejection', (reason) => {
+    unhandledRejections.push(reason as Error);
+    // Don't log these during tests as they are expected in error testing scenarios
+  });
+}
 
 // Reset unhandled rejections before each test
 beforeEach(() => {
@@ -40,6 +43,7 @@ global.ResizeObserver = class ResizeObserver {
   unobserve() {}
   disconnect() {}
 };
+
 // Mock import.meta for Vite environment variables
 Object.defineProperty(import.meta, 'env', {
   value: {

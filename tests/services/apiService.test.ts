@@ -1,7 +1,7 @@
 /**
  * Tests for apiService
  */
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 // Mock do axios
 vi.mock('axios', () => ({
@@ -25,7 +25,7 @@ describe('apiService', () => {
   beforeEach(() => {
     mockAxiosCreate = axios.create as ReturnType<typeof vi.fn>;
     vi.clearAllMocks();
-    
+
     // Define a variável de ambiente para os testes
     process.env.NEXT_PUBLIC_API_URL = 'http://localhost:3000/api';
   });
@@ -64,7 +64,7 @@ describe('apiService', () => {
   it('should have correct headers configuration', async () => {
     // Limpa o cache do módulo para garantir importação limpa
     vi.resetModules();
-    
+
     await import('../../src/services/apiService');
 
     expect(mockAxiosCreate).toHaveBeenCalledWith({
@@ -79,16 +79,16 @@ describe('apiService', () => {
   it('should handle missing environment variable gracefully', async () => {
     // Salva o valor original
     const originalApiUrl = process.env.NEXT_PUBLIC_API_URL;
-    
+
     // Remove a variável de ambiente
     delete process.env.NEXT_PUBLIC_API_URL;
-    
+
     // Limpa o cache do módulo para reimportar
     vi.resetModules();
-    
+
     // Reimporta o serviço
     await import('../../src/services/apiService');
-    
+
     // Verifica se ainda cria a instância (mesmo com baseURL undefined)
     expect(mockAxiosCreate).toHaveBeenCalledWith({
       baseURL: undefined,
@@ -97,7 +97,7 @@ describe('apiService', () => {
         'Content-Type': 'application/json; charset=utf-8',
       },
     });
-    
+
     // Restaura o valor original
     process.env.NEXT_PUBLIC_API_URL = originalApiUrl;
   });
@@ -105,19 +105,19 @@ describe('apiService', () => {
   it('should create only one axios instance', async () => {
     // Limpa o cache do módulo
     vi.resetModules();
-    
+
     // Importa o serviço múltiplas vezes
     await import('../../src/services/apiService');
     await import('../../src/services/apiService');
     await import('../../src/services/apiService');
-    
+
     // Deve ter chamado create apenas uma vez (devido ao cache do módulo)
     expect(mockAxiosCreate).toHaveBeenCalledTimes(1);
   });
 
   it('should be an axios instance with all HTTP methods', async () => {
     const { default: api } = await import('../../src/services/apiService');
-    
+
     // Verifica se é uma instância do axios com todos os métodos HTTP
     expect(typeof api.get).toBe('function');
     expect(typeof api.post).toBe('function');

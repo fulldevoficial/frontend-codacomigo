@@ -5,18 +5,21 @@ Este é um projeto [Next.js](https://nextjs.org) com TypeScript, Tailwind CSS e 
 ## 🚀 Instalação e Configuração
 
 ### Pré-requisitos
-- Node.js 18+ 
+
+- Node.js 18+
 - Yarn (recomendado) ou npm
 
 ### Instalação
 
 1. Clone o repositório:
+
 ```bash
 git clone <url-do-repositorio>
 cd frontend-codacomigo
 ```
 
 2. Instale as dependências:
+
 ```bash
 yarn install
 # ou
@@ -26,6 +29,7 @@ npm install
 ## 🛠️ Comandos Disponíveis
 
 ### Desenvolvimento
+
 ```bash
 # Iniciar servidor de desenvolvimento
 yarn dev
@@ -44,6 +48,7 @@ yarn lint
 ```
 
 ### Testes
+
 ```bash
 # Executar testes unitários com cobertura
 yarn test:unit
@@ -58,28 +63,33 @@ yarn vitest Card.test.tsx
 ## 🧪 Estratégia de Testes
 
 ### Cobertura de Testes
+
 Este projeto visa **máxima cobertura de testes** em todos os diretórios, **exceto** `/app`:
 
 #### ✅ **Diretórios com Testes Obrigatórios:**
+
 - `src/components/` - Componentes React
 - `src/hooks/` - Custom hooks
 - `src/services/` - Serviços e APIs
 - `src/stores/` - Gerenciamento de estado
 
 #### ❌ **Diretórios Excluídos:**
+
 - `src/app/` - Páginas do Next.js (App Router)
 
 ### Estrutura de Testes
+
 ```
 tests/
 ├── components/          # Testes de componentes
-├── hooks/              # Testes de custom hooks  
+├── hooks/              # Testes de custom hooks
 ├── services/           # Testes de serviços
 ├── stores/             # Testes de stores
 └── setup.ts            # Configuração global dos testes
 ```
 
 ### Configuração de Cobertura
+
 - **Mínimo**: 80% de cobertura em branches, functions, lines e statements
 - **Relatórios**: Text, JSON e HTML gerados em `./coverage/`
 - **Thresholds**: Configurados no `vitest.config.ts`
@@ -87,6 +97,7 @@ tests/
 ### Exemplos de Testes
 
 #### Componente React:
+
 ```typescript
 // tests/components/MeuComponente.test.tsx
 import { render, screen } from '@testing-library/react';
@@ -103,18 +114,19 @@ describe('MeuComponente', () => {
   it('should handle user interactions', async () => {
     const user = userEvent.setup();
     const mockOnClick = vi.fn();
-    
+
     render(<MeuComponente onClick={mockOnClick} />);
-    
+
     const button = screen.getByRole('button');
     await user.click(button);
-    
+
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
 });
 ```
 
 #### Custom Hook:
+
 ```typescript
 // tests/hooks/useMeuHook.test.tsx
 import { renderHook, act } from '@testing-library/react';
@@ -129,11 +141,11 @@ describe('useMeuHook', () => {
 
   it('should update state correctly', () => {
     const { result } = renderHook(() => useMeuHook());
-    
+
     act(() => {
       result.current.increment();
     });
-    
+
     expect(result.current.value).toBe(1);
   });
 });
@@ -144,12 +156,14 @@ describe('useMeuHook', () => {
 ### Princípios de Componentização
 
 #### ✅ **Componentize SEMPRE:**
+
 - **Elementos reutilizáveis**: Botões, inputs, cards, modais
 - **Seções de UI**: Headers, footers, sidebars, layouts
 - **Lógica de apresentação**: Listas, tabelas, formulários
 - **Estados visuais**: Loading, error, empty states
 
 #### 📁 **Estrutura de Componentes:**
+
 ```
 src/components/
 ├── ui/                 # Componentes base (Button, Input, etc.)
@@ -191,16 +205,16 @@ interface CardProps {
  * @param onClick - Optional click handler
  * @param children - Optional additional content
  */
-export default function Card({ 
-  title, 
-  description, 
-  imageUrl, 
-  tags, 
+export default function Card({
+  title,
+  description,
+  imageUrl,
+  tags,
   onClick,
-  children 
+  children
 }: CardProps) {
   return (
-    <div 
+    <div
       className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
       onClick={onClick}
       role={onClick ? 'button' : undefined}
@@ -239,13 +253,16 @@ tests/                 # Testes unitários
 ## 🚀 Deploy
 
 ### Build de Produção
+
 ```bash
 yarn build
 yarn start
 ```
 
 ### Variáveis de Ambiente
+
 Crie um arquivo `.env.local` com as variáveis necessárias:
+
 ```bash
 NEXT_PUBLIC_API_URL=http://localhost:3000/api
 ```
@@ -268,6 +285,7 @@ NEXT_PUBLIC_API_URL=http://localhost:3000/api
 5. Abra um Pull Request
 
 ### Checklist para PRs:
+
 - [ ] Código testado e funcionando
 - [ ] Testes unitários com boa cobertura
 - [ ] Componentes bem estruturados e reutilizáveis
