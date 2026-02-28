@@ -1,5 +1,5 @@
 declare module 'next-pwa' {
-  import { NextConfig } from 'next'
+  import type { NextConfig } from 'next'
 
   type RuntimeCachingEntry = {
     urlPattern: string | RegExp
