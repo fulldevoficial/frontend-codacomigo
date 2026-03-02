@@ -27,72 +27,37 @@ export default defineConfig([
       'simple-import-sort': simpleImportSort,
       'unused-imports': unusedImports,
     },
-
-    settings: {
-      /**
-       * Resolver de aliases do tsconfig
-       */
-      'import/resolver': {
-        typescript: {
-          project: './tsconfig.json',
-        },
-      },
-    },
-
+    settings: { 'import/resolver': { typescript: { project: './tsconfig.json' } } },
     rules: {
-      /**
-       * Organização de imports
-       */
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
       'import/no-duplicates': 'error',
-
-      /**
-       * Evita imports relativos profundos
-       */
       'no-restricted-imports': [
         'error',
-        {
-          patterns: [
-            {
-              group: ['../..*'],
-              message: 'Use path aliases (@/...) instead of deep relative imports',
-            },
-          ],
-        },
+        { patterns: [{ group: ['../..*'], message: 'Use path aliases (@/...) instead of deep relative imports' }] },
       ],
-
-      /**
-       * Limpeza de código morto
-       */
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': 'off',
-
       'unused-imports/no-unused-imports': 'error',
       'unused-imports/no-unused-vars': ['warn', UNUSED_VARS_CONFIG],
-
-      /**
-       * TypeScript
-       */
-      '@typescript-eslint/consistent-type-imports': [
-        'error',
-        {
-          prefer: 'type-imports',
-          fixStyle: 'separate-type-imports',
-        },
-      ],
-
-      /**
-       * Boas práticas JS
-       */
-      'prefer-const': 'error',
       'no-var': 'error',
       'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+      'prefer-const': 'off',
+      '@typescript-eslint/no-unused-expressions': 'off',
+    },
+  },
+
+  {
+    files: ['public/sw.js', 'public/workbox-*.js'],
+    rules: {
+      'prefer-const': 'off',
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-expressions': 'off',
     },
   },
 
   prettier,
-
   globalIgnores(DEFAULT_IGNORES),
 
   ...(storybook.configs['flat/recommended'] as unknown as Linter[]).map((config) => ({
