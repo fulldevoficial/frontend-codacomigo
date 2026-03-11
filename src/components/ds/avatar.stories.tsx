@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import { Avatar, AvatarFallback,AvatarImage } from "./avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 
 type AvatarStoryProps = {
   size: "xs" | "sm" | "md" | "lg" | "xl";
@@ -31,14 +31,11 @@ type Story = StoryObj<AvatarStoryProps>;
 export const Default: Story = {
   args: {
     size: "md",
-    imageUrl: "",
-    fallback: "MC",
+    imageUrl: "https://github.com/shadcn.png",
+    fallback: "User",
   },
   render: ({ size, imageUrl, fallback }) => {
-    const sizeMap: Record<
-      AvatarStoryProps["size"],
-      string
-    > = {
+    const sizeMap: Record<AvatarStoryProps["size"], string> = {
       xs: "w-[50px] h-[50px]",
       sm: "w-[50.84px] h-[50.49px]",
       md: "w-[60px] h-[60px]",
@@ -47,13 +44,10 @@ export const Default: Story = {
     };
 
     return (
-  <Avatar className={sizeMap[size]}>
-    {imageUrl ? (
-      <AvatarImage src={imageUrl} />
-    ) : (
-      <AvatarFallback>{fallback}</AvatarFallback>
-    )}
-  </Avatar>
-   );
+      <Avatar className={sizeMap[size]}>
+        <AvatarImage src={imageUrl} alt="Avatar image" />
+        <AvatarFallback>{fallback}</AvatarFallback>
+      </Avatar>
+    );
   },
 };
