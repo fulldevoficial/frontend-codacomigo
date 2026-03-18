@@ -1,7 +1,12 @@
+'use client'
+
+import { Navbar } from '@/components/ds/navbar';
+import { TooltipProvider } from '@/components/ui/tooltip';
 import '@/styles/globals.css';
 
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { usePathname } from 'next/navigation';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -19,9 +24,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname()
+
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} dark antialiased`}>{children}</body>
+      <body className={`${inter.variable} dark antialiased`}>
+        <TooltipProvider>
+          {children}
+          <Navbar active={`/${pathname}`} />
+        </TooltipProvider>
+      </body>
     </html>
   );
 }
