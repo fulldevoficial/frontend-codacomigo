@@ -12,7 +12,7 @@ export const darkTheme = create({
   textColor: '#fafafa',
   textInverseColor: '#0a0a0a',
 
-  barBg: '#0a0a0a',
+  barBg: '#b22d00',
   barTextColor: '#fafafa',
   barSelectedColor: '#b22d00',
 
