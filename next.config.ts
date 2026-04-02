@@ -5,7 +5,7 @@ const pwaConfig = withPWA({
   dest: 'public',
   register: true,
   skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development',
+  disable: false,
   buildExcludes: [/middleware-manifest.json$/],
   fallbacks: {
     document: '/offline.html',
