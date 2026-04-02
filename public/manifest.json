@@ -12,49 +12,49 @@
   "prefer_related_applications": false,
   "icons": [
     {
-      "src": "/icons/Logotipo%20preto%20quadrado%20grande.png",
+      "src": "/icons/logotipo-preto-quadrado-grande.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"
     },
     {
-      "src": "/icons/Logotipo%20preto%20médio.png",
+      "src": "/icons/logotipo-preto-medio.png",
       "type": "image/png",
       "sizes": "256x256",
       "purpose": "any"
     },
     {
-      "src": "/icons/Logotipo%20preto%20quadrado.png",
+      "src": "/icons/logotipo-preto-quadrado.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "/icons/Símbolo%20laranja.png",
+      "src": "/icons/simbolo-laranja.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"
     },
     {
-      "src": "/icons/Símbolo%20preto.png",
+      "src": "/icons/simbolo-preto.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"
     },
     {
-      "src": "/icons/Logotipo%20laranja%20quadrado.png",
+      "src": "/icons/logotipo-laranja-quadrado.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "/icons/Logotipo%20preto%20quadrado.png",
+      "src": "/icons/logotipo-preto-quadrado.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "/icons/Logotipo%20laranja.png",
+      "src": "/icons/logotipo-laranja.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"
