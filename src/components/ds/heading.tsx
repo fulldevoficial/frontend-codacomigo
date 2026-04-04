@@ -7,10 +7,10 @@ import { cn } from '@/lib/utils';
 export const headingVariants = cva('tracking-tight', {
   variants: {
     size: {
-      h1: 'text-5xl',
-      h2: 'text-4xl',
-      h3: 'text-3xl',
-      h4: 'text-2xl',
+      xl: 'text-5xl',
+      lg: 'text-4xl',
+      md: 'text-3xl',
+      sm: 'text-2xl',
     },
     weight: {
       bold: 'font-semibold',
