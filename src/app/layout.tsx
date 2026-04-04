@@ -1,19 +1,19 @@
-import "@/styles/globals.css";
+import '@/styles/globals.css';
 
-import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
-  title: "Frontend Coda Comigo",
-  description: "Aplicação com componentes reutilizáveis e PWA.",
-  manifest: "/manifest.json", 
+  title: 'Frontend Coda Comigo',
+  description: 'Aplicação com componentes reutilizáveis e PWA.',
+  manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
-    statusBarStyle: "black-translucent",
+    statusBarStyle: 'black-translucent',
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#e8059cff",
+  themeColor: '#e8059cff',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
