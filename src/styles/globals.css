@@ -27,8 +27,13 @@
     --destructive: #f04343;
     --destructive-foreground: #fafafa;
 
+    --background-button: #f6f6f6;
+
     --border: #e5e5e5;
+    --border-button: #c7c7c7;
     --input: #e5e5e5;
+
+    --text-button: #636363;
 
     --ring: #0a0a0a;
 
