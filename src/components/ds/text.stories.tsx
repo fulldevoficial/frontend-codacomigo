@@ -15,11 +15,11 @@ const meta: Meta<typeof Text> = {
     },
     weight: {
       control: 'select',
-      options: ['regular', 'medium', 'semibold'],
+      options: ['regular', 'medium', 'semibold', 'bold'],
     },
     tone: {
       control: 'select',
-      options: ['default', 'muted'],
+      options: ['default', 'muted', 'black', 'brand'],
     },
     as: {
       control: 'select',
@@ -57,6 +57,8 @@ export const Tones: Story = {
     <div className="space-y-3">
       <Text tone="default">Default tone</Text>
       <Text tone="muted">Muted tone</Text>
+      <Text tone="black">Black tone</Text>
+      <Text tone="brand">Brand tone</Text>
     </div>
   ),
 };

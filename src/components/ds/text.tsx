@@ -17,10 +17,13 @@ export const textVariants = cva('', {
       regular: 'font-normal',
       medium: 'font-medium',
       semibold: 'font-semibold',
+      bold: 'font-bold',
     },
     tone: {
       default: 'text-foreground',
       muted: 'text-muted-foreground',
+      black: 'text-black',
+      brand: 'text-[#B22D00]',
     },
   },
   defaultVariants: {
