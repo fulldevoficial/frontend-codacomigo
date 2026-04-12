@@ -19,7 +19,7 @@ const meta: Meta<typeof Text> = {
     },
     tone: {
       control: 'select',
-      options: ['default', 'muted', 'black', 'brand'],
+      options: ['default', 'muted', 'black', 'brand', 'colored'],
     },
     as: {
       control: 'select',
@@ -59,6 +59,7 @@ export const Tones: Story = {
       <Text tone="muted">Muted tone</Text>
       <Text tone="black">Black tone</Text>
       <Text tone="brand">Brand tone</Text>
+      <Text tone="colored">Colored tone</Text>
     </div>
   ),
 };

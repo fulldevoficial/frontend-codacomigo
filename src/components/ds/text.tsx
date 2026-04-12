@@ -24,6 +24,7 @@ export const textVariants = cva('', {
       muted: 'text-muted-foreground',
       black: 'text-black',
       brand: 'text-[#B22D00]',
+      colored: 'text-[#FB433C]',
     },
   },
   defaultVariants: {
