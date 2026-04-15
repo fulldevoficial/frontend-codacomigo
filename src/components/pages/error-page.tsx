@@ -1,6 +1,6 @@
 import { Heading } from '@/components/ds/heading'
-import { Text } from '@/components/ds/text'
 import { Logo } from '@/components/ds/logo'
+import { Text } from '@/components/ds/text'
 
 export default function ErrorPage() {
   return (

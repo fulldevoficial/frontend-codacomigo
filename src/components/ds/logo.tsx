@@ -1,30 +1,43 @@
-import { cva, type VariantProps } from 'class-variance-authority'
-import { cn } from '@/lib/utils'
-import logo from '../images/logo.png'
+import Image from "next/image"
+import { cva, type VariantProps } from "class-variance-authority"
 
-const logoVariants = cva('', {
+import { cn } from "@/lib/utils"
+import logo from "../images/logo.png"
+
+const logoVariants = cva("", {
   variants: {
     size: {
-      sm: 'w-[60px] h-[60px]',
-      lg: 'w-[135px] h-[119px]',
+      sm: "w-[60px] h-[60px]",
+      lg: "w-[135px] h-[119px]",
     },
   },
   defaultVariants: {
-    size: 'sm',
+    size: "sm",
   },
 })
 
-type LogoProps = VariantProps<typeof logoVariants> & {
-  className?: string
+const sizeMap = {
+  sm: { width: 60, height: 60 },
+  lg: { width: 135, height: 119 },
 }
 
-export function Logo({ size, className }: LogoProps) {
+type LogoProps = VariantProps<typeof logoVariants> & {
+  className?: string
+  size: "sm" | "lg"
+}
+
+export function Logo({ size = "sm", className }: LogoProps) {
+  const { width, height } = sizeMap[size]
+
   return (
     <div className={cn(logoVariants({ size }), className)}>
-      <img
-        src={typeof logo === 'string' ? logo : logo.src}
+      <Image
+        src={logo}
         alt="Logo da aplicação"
-        className="w-full h-full object-contain"
+        width={width}
+        height={height}
+        className="object-contain"
+        priority
       />
     </div>
   )
