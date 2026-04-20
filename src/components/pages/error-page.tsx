@@ -17,7 +17,7 @@ export default function ErrorPage() {
           size="p2"
           tone="black"
           weight="regular"
-          className="max-w-[380px] leading-none"
+          className="max-w-95 leading-none"
         >
           Não encontramos uma conta conectada ao{' '}
           <Text size="p2" as="span" tone="brand" weight="regular">

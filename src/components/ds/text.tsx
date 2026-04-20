@@ -23,8 +23,8 @@ export const textVariants = cva('', {
       default: 'text-foreground',
       muted: 'text-muted-foreground',
       black: 'text-black',
-      brand: 'text-[#B22D00]',
-      colored: 'text-[#FB433C]',
+      brand: 'text-orange-700',
+      colored: 'text-red-500',
     },
   },
   defaultVariants: {

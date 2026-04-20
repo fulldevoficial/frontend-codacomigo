@@ -11,7 +11,7 @@ export const headingVariants = cva('tracking-tight', {
       lg: 'text-4xl',
       md: 'text-3xl',
       sm: 'text-2xl',
-      xs: 'text-[22px]',
+      xs: 'text-xl',
     },
     weight: {
       bold: 'font-semibold',
